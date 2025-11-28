@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import LandingPage from './components/LandingPage';
 import Sidebar from './components/Sidebar';
 import ChatInterface from './components/ChatInterface';
 import { api } from './api';
 import './App.css';
 
 function App() {
+  const [showCouncil, setShowCouncil] = useState(false);
   const [conversations, setConversations] = useState([]);
   const [currentConversationId, setCurrentConversationId] = useState(null);
   const [currentConversation, setCurrentConversation] = useState(null);
@@ -181,6 +183,18 @@ function App() {
     }
   };
 
+  const handleEnterCouncil = () => {
+    setShowCouncil(true);
+  };
+
+  const handleBackToLanding = () => {
+    setShowCouncil(false);
+  };
+
+  if (!showCouncil) {
+    return <LandingPage onEnterCouncil={handleEnterCouncil} />;
+  }
+
   return (
     <div className="app">
       <Sidebar
@@ -188,6 +202,7 @@ function App() {
         currentConversationId={currentConversationId}
         onSelectConversation={handleSelectConversation}
         onNewConversation={handleNewConversation}
+        onBackToLanding={handleBackToLanding}
       />
       <ChatInterface
         conversation={currentConversation}

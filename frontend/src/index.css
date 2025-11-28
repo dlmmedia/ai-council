@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.5;
+  /* Roman Theme Colors */
+  --gold-primary: #d4af78;
+  --gold-light: #f5ead6;
+  --gold-dark: #b89048;
+  --marble-light: #f8f4ed;
+  --marble-medium: #e8dfd0;
+  --parchment: #fffcf7;
+  --bronze: #8a7048;
+  --dark-wood: #1a1410;
+  --text-primary: #3a3024;
+  --text-secondary: #6a5a48;
+  
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.6;
   font-weight: 400;
 
   font-synthesis: none;
@@ -19,7 +33,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: var(--marble-light);
 }
 
 #root {
@@ -28,13 +42,16 @@ body {
   overflow: hidden;
 }
 
-/* Global markdown styling */
+/* Global markdown styling with Roman theme */
 .markdown-content {
-  padding: 12px;
+  padding: 16px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .markdown-content p {
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
+  line-height: 1.75;
+  color: var(--text-primary);
 }
 
 .markdown-content p:last-child {
@@ -47,7 +64,10 @@ body {
 .markdown-content h4,
 .markdown-content h5,
 .markdown-content h6 {
-  margin: 16px 0 8px 0;
+  font-family: 'Cinzel', serif;
+  margin: 20px 0 12px 0;
+  color: var(--bronze);
+  letter-spacing: 0.05em;
 }
 
 .markdown-content h1:first-child,
@@ -61,38 +81,70 @@ body {
 
 .markdown-content ul,
 .markdown-content ol {
-  margin: 0 0 12px 0;
-  padding-left: 24px;
+  margin: 0 0 14px 0;
+  padding-left: 28px;
 }
 
 .markdown-content li {
-  margin: 4px 0;
+  margin: 6px 0;
+  line-height: 1.7;
 }
 
 .markdown-content pre {
-  background: #f5f5f5;
-  padding: 12px;
-  border-radius: 4px;
+  background: linear-gradient(
+    135deg,
+    rgba(40, 32, 24, 0.06) 0%,
+    rgba(60, 48, 36, 0.08) 100%
+  );
+  padding: 16px;
+  border-radius: 8px;
   overflow-x: auto;
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
+  border: 1px solid rgba(180, 140, 70, 0.15);
 }
 
 .markdown-content code {
-  background: #f5f5f5;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: monospace;
+  background: rgba(180, 140, 70, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
   font-size: 0.9em;
+  color: var(--bronze);
 }
 
 .markdown-content pre code {
   background: none;
   padding: 0;
+  color: var(--text-primary);
 }
 
 .markdown-content blockquote {
-  margin: 0 0 12px 0;
-  padding-left: 16px;
-  border-left: 4px solid #ddd;
-  color: #666;
+  margin: 0 0 14px 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--gold-primary);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.markdown-content strong {
+  color: var(--bronze);
+  font-weight: 600;
+}
+
+.markdown-content a {
+  color: var(--gold-dark);
+  text-decoration: underline;
+  text-decoration-color: rgba(184, 144, 72, 0.4);
+  transition: all 0.2s ease;
+}
+
+.markdown-content a:hover {
+  color: var(--bronze);
+  text-decoration-color: rgba(184, 144, 72, 0.8);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(212, 175, 120, 0.3);
+  color: var(--text-primary);
 }

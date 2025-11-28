@@ -1,0 +1,91 @@
+DLM LLM COUNCIL - BRAND GUIDE
+==============================
+
+BRAND NAME
+----------
+DLM LLM Council
+
+TAGLINE
+-------
+"Where the Greatest Minds of Artificial Intelligence Convene"
+
+COLOR PALETTE
+-------------
+Primary Gold:       #d4af78 (Gold accent, highlights, buttons)
+Gold Light:         #f5ead6 (Light text on dark backgrounds)
+Gold Dark:          #b89048 (Button gradients, accents)
+Bronze:             #8a7048 (Headings, strong emphasis)
+Dark Wood:          #1a1410 (Sidebar background, dark elements)
+Text Primary:       #3a3024 (Main body text)
+Text Secondary:     #6a5a48 (Muted text, descriptions)
+Marble Light:       #f8f4ed (Main content background)
+Marble Medium:      #e8dfd0 (Secondary backgrounds)
+Parchment:          #fffcf7 (Input fields, cards)
+
+TYPOGRAPHY
+----------
+Headings:           Cinzel (serif, classical Roman feel)
+                    - Weight: 400-700
+                    - Letter-spacing: 0.08em - 0.15em
+                    - Text-transform: uppercase for labels
+
+Body Text:          Cormorant Garamond (elegant serif)
+                    - Weight: 400-600
+                    - Line-height: 1.6-1.8
+                    - Font-style: italic for descriptions
+
+BUTTON STYLES
+-------------
+Primary Button:
+  - Background: linear-gradient(135deg, #d4af78, #c4a060, #b89048)
+  - Text: #1a1410 (dark)
+  - Font: Cinzel, uppercase, letter-spacing: 0.1em
+  - Border-radius: 4-12px
+  - Shadow: 0 4px 15px rgba(180, 140, 70, 0.3)
+  - Hover: translateY(-2px), increased shadow
+
+Secondary Button:
+  - Background: transparent
+  - Border: 1px solid rgba(212, 175, 120, 0.3)
+  - Text: #d4af78
+  - Hover: Background rgba(212, 175, 120, 0.1)
+
+CARD STYLES
+-----------
+Background:         linear-gradient(135deg, rgba(40, 30, 20, 0.8), rgba(30, 22, 15, 0.9))
+Border:             1px solid rgba(212, 175, 120, 0.25)
+Border-radius:      8-12px
+Shadow:             0 4px 20px rgba(180, 140, 70, 0.08)
+
+INPUT STYLES
+------------
+Background:         #fffcf7 (parchment)
+Border:             1px solid rgba(180, 140, 70, 0.3)
+Focus:              Border-color: rgba(180, 140, 70, 0.6)
+                    Shadow: 0 0 0 3px rgba(180, 140, 70, 0.1)
+
+ICONOGRAPHY
+-----------
+- Roman numerals for stages (Ⅰ, Ⅱ, Ⅲ)
+- Classical building emoji (🏛️)
+- Laurel wreaths as decorative elements
+- Arrows styled minimally (←, ⟶)
+
+DESIGN PRINCIPLES
+-----------------
+1. Classical elegance with modern functionality
+2. Warm, inviting color palette (gold, bronze, cream)
+3. Generous whitespace and breathing room
+4. Subtle gradients and shadows for depth
+5. Ancient Roman senate aesthetic
+6. Decorative pillars on landing page
+
+SPACING
+-------
+Padding (cards):    20-24px
+Padding (sections): 32-40px
+Gap (elements):     10-16px
+Border-radius:      6-12px
+
+LAST UPDATED: November 2024
+

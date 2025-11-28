@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -7,9 +9,7 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: #ffffff;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background: #f8f4ed;
+  color: #3a3024;
+  font-family: 'Cormorant Garamond', serif;
 }

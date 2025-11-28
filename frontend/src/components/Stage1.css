@@ -1,65 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
 .stage {
-  margin: 24px 0;
-  padding: 20px;
-  background: #fafafa;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  margin: 28px 0;
+  padding: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 252, 247, 0.9) 0%,
+    rgba(248, 244, 237, 0.95) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(180, 140, 70, 0.2);
+  box-shadow: 0 4px 20px rgba(180, 140, 70, 0.08);
 }
 
 .stage-title {
-  margin: 0 0 16px 0;
-  color: #333;
-  font-size: 16px;
+  font-family: 'Cinzel', serif;
+  margin: 0 0 20px 0;
+  color: #8a7048;
+  font-size: 15px;
   font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stage-title::before {
+  content: 'Ⅰ';
+  font-size: 18px;
+  color: #d4af78;
 }
 
 .tabs {
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
+  border-bottom: 1px solid rgba(180, 140, 70, 0.15);
+  padding-bottom: 12px;
 }
 
 .tab {
-  padding: 8px 16px;
-  background: #ffffff;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px 6px 0 0;
-  color: #666;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid rgba(180, 140, 70, 0.25);
+  border-radius: 8px;
+  color: #8a7a68;
   cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
-  transition: all 0.2s;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .tab:hover {
-  background: #f0f0f0;
-  color: #333;
-  border-color: #4a90e2;
+  background: rgba(212, 175, 120, 0.1);
+  color: #6a5a48;
+  border-color: rgba(180, 140, 70, 0.4);
 }
 
 .tab.active {
-  background: #ffffff;
-  color: #4a90e2;
-  border-color: #4a90e2;
-  border-bottom-color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 120, 0.2) 0%,
+    rgba(180, 140, 70, 0.15) 100%
+  );
+  color: #6a4a28;
+  border-color: rgba(180, 140, 70, 0.5);
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(180, 140, 70, 0.15);
 }
 
 .tab-content {
-  background: #ffffff;
-  padding: 16px;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
+  background: #fffcf7;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(180, 140, 70, 0.15);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .model-name {
-  color: #888;
-  font-size: 12px;
-  margin-bottom: 12px;
-  font-family: monospace;
+  font-family: 'Cinzel', serif;
+  color: #a89878;
+  font-size: 11px;
+  margin-bottom: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(180, 140, 70, 0.1);
 }
 
 .response-text {
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Cormorant Garamond', serif;
+  color: #3a3024;
+  line-height: 1.75;
+  font-size: 16px;
 }
