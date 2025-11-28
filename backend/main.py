@@ -17,13 +17,7 @@ app = FastAPI(title="LLM Council API")
 # Enable CORS for local development and production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "https://frontend-dabm0t28w-albertmusic102-4703s-projects.vercel.app",
-        "https://frontend-albertmusic102-4703s-projects.vercel.app",
-        "https://ai-council.vercel.app",
-    ],
+    allow_origins=["*"],  # Allow all origins for now
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
