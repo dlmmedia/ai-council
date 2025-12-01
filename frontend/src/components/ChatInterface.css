@@ -278,3 +278,12 @@
   background: #a89878;
   box-shadow: none;
 }
+
+/* Download Section */
+.download-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(180, 140, 70, 0.2);
+  display: flex;
+  justify-content: center;
+}

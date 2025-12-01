@@ -87,5 +87,34 @@ Padding (sections): 32-40px
 Gap (elements):     10-16px
 Border-radius:      6-12px
 
+DOWNLOAD REPORT COMPONENT
+-------------------------
+Trigger Button:
+  - Background: linear-gradient(135deg, #d4af78, #c4a060, #b89048)
+  - Text: #1a1410 (dark)
+  - Font: Cinzel, 13px, 600 weight, uppercase
+  - Letter-spacing: 0.1em
+  - Padding: 12px 24px
+  - Border-radius: 8px
+  - Shadow: 0 4px 15px rgba(180, 140, 70, 0.3)
+  - Hover: translateY(-2px), increased shadow
+  - Icon: 📥
+
+Dropdown Panel:
+  - Background: linear-gradient(135deg, #fffcf7, #f8f4ed)
+  - Border: 1px solid rgba(180, 140, 70, 0.3)
+  - Border-radius: 12px
+  - Shadow: 0 10px 40px rgba(26, 20, 16, 0.15)
+  - Animation: dropdownSlide 0.2s ease-out
+
+Format Options:
+  - Padding: 14px 16px
+  - Hover: Background gradient rgba(212, 175, 120, 0.15)
+  - Icon container: 36x36px, rounded, gold gradient background
+
+Format Icons:
+  - PDF: 📄
+  - Word: 📝
+
 LAST UPDATED: November 2024
 
