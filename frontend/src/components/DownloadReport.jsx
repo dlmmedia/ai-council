@@ -80,6 +80,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
       const margin = 20;
+      const footerBuffer = 12;
       const contentWidth = pageWidth - (margin * 2);
       let yPos = margin;
 
@@ -88,31 +89,47 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
       const textPrimary = [58, 48, 36]; // #3a3024
       const goldAccent = [184, 144, 72]; // #b89048
 
+      const drawPageFrame = () => {
+        doc.setDrawColor(...goldAccent);
+        doc.setLineWidth(0.5);
+        doc.rect(10, 10, pageWidth - 20, pageHeight - 20);
+        doc.setLineWidth(0.2);
+        doc.rect(12, 12, pageWidth - 24, pageHeight - 24);
+      };
+
+      doc.setLineHeightFactor(1.4);
+      drawPageFrame();
+
       // Helper function to add text with word wrap
       const addWrappedText = (text, x, y, maxWidth, fontSize = 11, color = textPrimary) => {
         doc.setFontSize(fontSize);
         doc.setTextColor(...color);
         const lines = doc.splitTextToSize(text, maxWidth);
-        doc.text(lines, x, y);
-        return y + (lines.length * fontSize * 0.4);
+        const lineHeight =
+          (fontSize * doc.getLineHeightFactor()) / doc.internal.scaleFactor;
+
+        lines.forEach((line) => {
+          if (y + lineHeight > pageHeight - margin - footerBuffer) {
+            doc.addPage();
+            drawPageFrame();
+            y = margin;
+          }
+          doc.text(line, x, y);
+          y += lineHeight;
+        });
+        return y;
       };
 
       // Check and add new page if needed
-      const checkPageBreak = (requiredSpace) => {
-        if (yPos + requiredSpace > pageHeight - margin) {
+      const ensurePageSpace = (requiredSpace = 0) => {
+        if (yPos + requiredSpace > pageHeight - margin - footerBuffer) {
           doc.addPage();
+          drawPageFrame();
           yPos = margin;
           return true;
         }
         return false;
       };
-
-      // Add decorative border
-      doc.setDrawColor(...goldAccent);
-      doc.setLineWidth(0.5);
-      doc.rect(10, 10, pageWidth - 20, pageHeight - 20);
-      doc.setLineWidth(0.2);
-      doc.rect(12, 12, pageWidth - 24, pageHeight - 24);
 
       // Title
       doc.setFont('helvetica', 'bold');
@@ -150,7 +167,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
       yPos += 10;
 
       // Stage 1: Individual Responses
-      checkPageBreak(30);
+      ensurePageSpace(30);
       doc.setDrawColor(...goldAccent);
       doc.line(margin, yPos, pageWidth - margin, yPos);
       yPos += 8;
@@ -163,7 +180,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
 
       if (stage1 && stage1.length > 0) {
         stage1.forEach((resp, index) => {
-          checkPageBreak(40);
+          ensurePageSpace(40);
           
           const modelName = resp.model.split('/')[1] || resp.model;
           
@@ -189,7 +206,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
       }
 
       // Stage 2: Peer Rankings
-      checkPageBreak(30);
+      ensurePageSpace(30);
       doc.setDrawColor(...goldAccent);
       doc.line(margin, yPos, pageWidth - margin, yPos);
       yPos += 8;
@@ -202,7 +219,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
 
       if (stage2 && stage2.length > 0) {
         stage2.forEach((rank, index) => {
-          checkPageBreak(35);
+          ensurePageSpace(35);
           
           const modelName = rank.model.split('/')[1] || rank.model;
           
@@ -229,7 +246,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
 
         // Aggregate Rankings
         if (metadata?.aggregate_rankings && metadata.aggregate_rankings.length > 0) {
-          checkPageBreak(40);
+          ensurePageSpace(40);
           
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(12);
@@ -251,7 +268,7 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
       }
 
       // Stage 3: Final Answer
-      checkPageBreak(30);
+      ensurePageSpace(30);
       doc.setDrawColor(...goldAccent);
       doc.line(margin, yPos, pageWidth - margin, yPos);
       yPos += 8;
@@ -732,5 +749,4 @@ export default function DownloadReport({ question, stage1, stage2, stage3, metad
     </div>
   );
 }
-
 
